@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expanding Cards</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/data.js"></script>
+    <script defer src="js/main.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Click on an image!</h1>
+    <div id="container">
+      <template v-for="(image,index) in images">
+        <div
+          :key="index"
+          ref="cards"
+          @click="addActive"
+          class="card"
+          :style="{ 'background-image': image.path}"
+        >
+          <span class="description">{{image.text}}</span>
+        </div>
+      </template>
+    </div>
+  </body>
+</html>
